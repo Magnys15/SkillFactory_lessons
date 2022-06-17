@@ -1,0 +1,2 @@
+Самое длинное слово: ['Twodaysworth', 'Crosshearted', 'disassembled']. Его длина 12 символов
+Слово/а ['would'] встретились 7 раз/а
