@@ -40,10 +40,50 @@ class Circle:
         return self.rad ** 2 * 3.14
 
 
-
 # Python_16.9.3
 
 class Customer:
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
+
+    def __str__(self):
+        return f"Имя покупателя: {self.name}. "\
+               f"Баланс: {self.balance}. "
+
+    @classmethod
+    def add_new_customer(cls):
+        nc = Customer(input("Введите имя клиента: "),
+                      input("Введите баланс клиента: "))
+        return nc
+
+
+class CustomerNew(Customer):
+    def __init__(self, name, balance, city, status):
+        super().__init__(name, balance)
+        self.city = city
+        self.status = status
+
+    def __str__(self):
+        return f"Имя покупателя: {self.name}. " \
+               f"Баланс: {self.balance}. " \
+               f"Город: {self.city}. " \
+               f"Статус: {self.status}. "
+
+    @classmethod
+    def add_new_customer(cls):
+        nc = CustomerNew(input("Введите имя клиента: "),
+                        input("Введите баланс клиента: "),
+                        input("Введите город клиента: "),
+                        input("Введите статус клиента: "))
+        return nc
+
+
+# class CustomerList:
+#     customer_list = []
+#
+#     def show_customers(self):
+#         for i in range(len(self.customer_list)):
+#             print(self.customer_list)
+
+
