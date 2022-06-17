@@ -79,11 +79,11 @@ class CustomerNew(Customer):
         return nc
 
 
-# class CustomerList:
-#     customer_list = []
-#
-#     def show_customers(self):
-#         for i in range(len(self.customer_list)):
-#             print(self.customer_list)
+class CustomerList:
+    customer_list = []
+
+    def show_customers(self):
+        for i in range(len(self.customer_list)):
+            print(self.customer_list[i])
 
 
