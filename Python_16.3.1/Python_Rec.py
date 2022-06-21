@@ -47,6 +47,7 @@ class Customer:
         self.name = name
         self.balance = balance
 
+
     def __str__(self):
         return f"Имя покупателя: {self.name}. "\
                f"Баланс: {self.balance}. "
@@ -54,7 +55,7 @@ class Customer:
     @classmethod
     def add_new_customer(cls):
         nc = Customer(input("Введите имя клиента: "),
-                      input("Введите баланс клиента: "))
+                      int(input("Введите баланс клиента: ")))
         return nc
 
 
@@ -63,6 +64,9 @@ class CustomerNew(Customer):
         super().__init__(name, balance)
         self.city = city
         self.status = status
+
+
+
 
     def __str__(self):
         return f"Имя покупателя: {self.name}. " \
@@ -87,3 +91,17 @@ class CustomerList:
             print(self.customer_list[i])
 
 
+# Python_16.10.5
+
+class SquareException(Exception):
+    pass
+
+
+class NonPositiveDigitException(ValueError):
+    pass
+
+
+class Square:
+    def __init__(self, a):
+        if a < 0:
+            raise NonPositiveDigitException('Неправильно указанна сторона квадрата')
