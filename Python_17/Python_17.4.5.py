@@ -32,6 +32,15 @@ class Queue:
         # для зацикливания очереди в списке
         self.tail = (self.tail + 1) % self.max_size # указатель хвоста (от 0 до 4)
 
+    def show(self):  # выводим приоритетную задачу
+        print(f"Задача №{self.tasks[self.head]} в приоритете")
+
+    def do(self):  # выполняем приоритетную задачу
+        print(f"Задача №{self.tasks[self.head]} выполнена")
+        # после выполнения зануляем элемент по указателю
+        self.tasks[self.head] = 0
+        # и циклично перемещаем указатель
+        self.head = (self.head + 1) % self.max_size
 
 
 
