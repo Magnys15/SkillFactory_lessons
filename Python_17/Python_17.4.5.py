@@ -23,6 +23,14 @@ class Queue:
         else:                 #если хвост больше головы, то очередь занята элементами от головы до хвоста(tail -head).
             return self.tail - self.head
 
+    def add(self):
+        self.task_num += 1  # увеличиваем порядковый номер задачи
+        self.tasks[self.tail] = self.task_num  # добавляем его в очередь (от 1 до 5)
+        print(f"Задача №{self.tasks[self.tail]} добавлена")
+
+        # увеличиваем указатель на 1 по модулю максимального числа элементов
+        # для зацикливания очереди в списке
+        self.tail = (self.tail + 1) % self.max_size # указатель хвоста (от 0 до 4)
 
 
 
