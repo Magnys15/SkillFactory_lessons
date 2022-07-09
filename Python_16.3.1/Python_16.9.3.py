@@ -7,7 +7,7 @@ def new_customers():
     number_of_customers = int(input("Введите число новых посетителей: "))
     for i in range(number_of_customers):
         nc = Customer(input("Введите имя клиента: "),
-                      input("Введите имя клиента: "))
+                      input("Введите баланс клиента: "))
         customers.append(nc)
 
 
